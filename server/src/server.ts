@@ -49,6 +49,7 @@ app.get("/games/:id/ads", async (request, response) => {
   const gameId = request.params.id;
   const ad = await prisma.ad.findMany({
     select: {
+      id: true,
       name: true,
       yearsPlaying: true,
       weekDays: true,
